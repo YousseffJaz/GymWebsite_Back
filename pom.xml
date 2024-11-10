@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Parent Spring Boot configuration -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version> <!-- Vous pouvez remplacer par la dernière version stable de Spring Boot si nécessaire -->
+        <relativePath/> <!-- Lookup parent from repository -->
+    </parent>
+
+    <groupId>com.example</groupId>
+    <artifactId>gymwebsite</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>gymwebsite</name>
+    <description>Projet de site web pour le gym</description>
+
+    <properties>
+        <java.version>17</java.version> <!-- Java 17 est supporté par Spring Boot 3.x -->
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Starter Web pour les APIs REST -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Starter Data JPA pour la gestion de la base de données -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Starter Security pour gérer la sécurité (authentification, etc.) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- Oracle JDBC Driver pour se connecter à la base de données Oracle -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>19.8.0.0</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Spring Boot Starter Test pour les tests unitaires et d'intégration -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- H2 Database pour les tests en mémoire, si nécessaire pendant le développement -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin Maven pour Spring Boot -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        
+    </build>
+</project>
